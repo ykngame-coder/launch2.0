@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suivi de Budget</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+  <div class="container">
+
+    <h1><i class="fas fa-wallet"></i> Mon Budget</h1>
+
+    <!-- Section Formulaire -->
+    <section class="form-section">
+      <form id="transaction-form">
+        <div class="form-group">
+          <label for="date"><i class="fas fa-calendar-alt"></i></label>
+          <input type="date" id="date" name="date" rerequired />
+        </div>
+
+        <div class="form-group">
+          <label for="montant"><i class="fas fa-euro-sign"></i></label>
+          <input type="number" id="montant" name="montant" placeholder="Montant (€)" required />
+        </div>
+
+        <div class="form-group">
+          <label for="description"><i class="fas fa-align-left"></i></label>
+          <input type="text" id="description" name="description" placeholder="Description" required />
+        </div>
+
+<div class="form-group">
+          <label for="categorie"><i class="fas fa-tags"></i></label>
+          <input type="text" id="categorie" name="categorie" placeholder="Catégorie" required /> <!-- ⚡ -->
+        </div>
+
+        <div class="form-group">
+          <label for="compte"><i class="fas fa-university"></i></label>
+          <input type="text" id="compte" name="compte" placeholder="Compte" required /> <!-- ⚡ -->
+        </div>
+
+        <div class="form-group">
+          <label for="etiquettes"><i class="fas fa-tag"></i></label>
+          <input type="text" id="etiquettes" name="etiquettes" placeholder="Étiquettes (optionnel)" /> <!-- ⚡ -->
+        </div>
+
+        <button type="submit">Ajouter</button>
+      </form>
+    </section>
+
+    <!-- Section Liste -->
+    <section class="transactions-section">
+      <h2><i class="fas fa-list"></i> Transactions</h2>
+      <div class="transactions-container">
+        <ul id="transactions-list"></ul>
+      </div>
+    </section>
+
+    <!-- Section Vue Globale -->
+    <section class="summary-section">
+      <h3>Solde total : <span id="solde">0</span> €</h3>
+      <div id="charts-container">
+       
+   <!-- Onglet Graphiques -->
+  <div id="graphes" class="tabcontent" style="display:none;">
+    <canvas id="categorieChart" width="400" height="200"></canvas>
+    <canvas id="soldeChart" width="400" height="200" style="margin-top:20px;"></canvas>
+  </div>
+</div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
